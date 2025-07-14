@@ -1,8 +1,8 @@
-![Splash Screen] (https://github.com/hefri11/Jembatani-Smart-farming-App/blob/63cc1fd532e15df4f2f1ddf0e3ea83a442885e93/src/Graphic.jpg))
-
 # 🌱 Jembatani Smart Farming Application
 
 Jembatani Android application developed to bridge the **Smart Farming** system with user devices. This project aims to provide convenience in integrating and controlling agricultural systems intelligently through an Android-based mobile interface.
+
+[!image alt](https://github.com/hefri11/Jembatani-Smart-farming-App/blob/main/src/Graphic.jpg?raw=true)
 
 ---
 
