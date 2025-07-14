@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorOnPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <!-- Your existing layout components -->
+        <ImageView
+            android:id="@+id/exit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/toolbar"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/actionBar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Tanamanku"
+            android:textColor="@color/green_500"
+            android:textSize="24sp"
+            android:layout_below="@id/exit_button"
+            android:textStyle="bold" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scoll_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        >
+
+        <RelativeLayout
+            android:id="@+id/plant_card_tomat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/background"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp">
+
+            <TextView
+                android:id="@+id/plant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Kebun Tomat"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/plant_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/plant_name"
+                android:layout_marginStart="16dp"
+                android:text="ID: 1344295024"
+                android:textColor="@color/grey"
+                tools:ignore="HardcodedText" />
+
+            <Switch
+                android:id="@+id/plant_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/plant_id"
+                android:layout_alignParentStart="true"
+                android:layout_margin="16dp"
+                android:layout_marginTop="-59dp"
+                android:checked="true"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <ImageView
+                android:id="@+id/plant_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/farm_actor" />
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

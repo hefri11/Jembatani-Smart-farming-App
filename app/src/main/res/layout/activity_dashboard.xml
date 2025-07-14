@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainDash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_dash"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorOnPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <!-- Your existing layout components -->
+        <ImageView
+            android:id="@+id/exit_button_dash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/toolbar"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/actionBar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Tanamanku"
+            android:textColor="@color/green_500"
+            android:textSize="24sp"
+            android:layout_below="@id/exit_button"
+            android:textStyle="bold" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scoll_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_dash"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="60dp">
+
+            <RelativeLayout
+                android:id="@+id/plant_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/background">
+
+                <TextView
+                    android:id="@+id/plant_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Kebun Tomat"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/plant_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/plant_name"
+                    android:layout_marginStart="16dp"
+                    android:text="ID: 1344295024"
+                    android:textColor="@color/grey" />
+
+                <Switch
+                    android:id="@+id/plant_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/plant_id"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="16dp"
+                    android:layout_marginTop="-59dp"
+                    android:checked="true" />
+
+                <ImageView
+                    android:id="@+id/plant_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/farm_actor" />
+            </RelativeLayout>
+
+            <!-- Plant Details Section -->
+            <RelativeLayout
+                android:id="@+id/containerdetailTanaman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grey"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Detail Tanaman"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/exclamation_circle" />
+
+            </RelativeLayout>
+
+
+            <!-- Plant Details Section -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/bg_white"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/judul_card_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Tomat"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/judul_card_detail"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/image_tomat" />
+
+                <ImageButton
+                    android:id="@+id/detailInfo_plant"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@+id/judul_card_detail"
+                    android:background="@drawable/rounded_on"
+                    android:src="@drawable/icon_buku" />
+
+                <ImageButton
+                    android:id="@+id/Set_detail_plant"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/detailInfo_plant"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@+id/img_detail"
+                    android:background="@drawable/rounded_on"
+                    android:src="@drawable/icon_set_detail" />
+
+                <TextView
+                    android:id="@+id/judulDetail_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/detailInfo_plant"
+                    android:text="Detail"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/judulDetail_progress"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_toEndOf="@+id/Set_detail_plant"
+                    android:src="@drawable/icon_plant" />
+
+                <TextView
+                    android:id="@+id/textinfo_Detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toEndOf="@+id/imageView2"
+                    android:text="Panen dalam 9 minggu" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/container_Detail_Lingkungan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grey"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pemantauan Lingkungan"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/exclamation_circle" />
+
+
+            </RelativeLayout>
+
+            <!-- Environmental Monitoring Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/CardHum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white"
+                    android:padding="8dp"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iconHum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/icon_lingkungan"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textHum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iconHum"
+                        android:layout_marginTop="9dp"
+                        android:text="Kelembapan" />
+
+                    <TextView
+                        android:id="@+id/textDataHum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textHum"
+                        android:layout_marginTop="9dp"
+                        android:text="60"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/infoSatuanHum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textHum"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_toEndOf="@+id/textDataHum"
+                        android:text="%"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/CardTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_white"
+                    android:padding="8dp"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iconTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/icon_temp"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iconTemp"
+                        android:layout_marginTop="9dp"
+                        android:text="Temperatur" />
+
+                    <TextView
+                        android:id="@+id/textDataTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textTemp"
+                        android:layout_marginTop="9dp"
+                        android:text="23"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/infoSatuanTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textTemp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_toEndOf="@+id/textDataTemp"
+                        android:text="°C"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/CardUdara"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_white"
+                    android:padding="8dp"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iconUdara"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/icon_lingkungan"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textUdara"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iconUdara"
+                        android:layout_marginTop="9dp"
+                        android:text="Tekanan Udara" />
+
+                    <TextView
+                        android:id="@+id/textDataUdara"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textUdara"
+                        android:layout_marginTop="9dp"
+                        android:text="- hPa"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Soil Monitoring Section -->
+            <RelativeLayout
+                android:id="@+id/container_Detail_Tanah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grey"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pemantauan Tanah"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/exclamation_circle" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center_horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/CardHumSoil"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_white"
+                        android:padding="8dp"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/iconHumSoil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="0dp"
+                            android:src="@drawable/icon_tanah"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/textHumSoil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iconHumSoil"
+                            android:layout_marginTop="9dp"
+                            android:text="Kelembapan Tanah" />
+
+                        <TextView
+                            android:id="@+id/textDataHumSoil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textHumSoil"
+                            android:layout_marginTop="9dp"
+                            android:text="60"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/infoSatuanSoilHum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textHumSoil"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginLeft="9dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_toEndOf="@+id/textDataHumSoil"
+                            android:text="%"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/CardTempSoil"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/bg_white"
+                        android:padding="8dp"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/iconTempSoil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="0dp"
+                            android:src="@drawable/icon_tanah_temp"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/textTempSoil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iconTempSoil"
+                            android:layout_marginTop="9dp"
+                            android:text="Temperatur Tanah" />
+
+                        <TextView
+                            android:id="@+id/textDataTempSoil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textTempSoil"
+                            android:layout_marginTop="9dp"
+                            android:text="23"
+                            android:textStyle="bold" />
+                        
+                        <TextView
+                            android:id="@+id/infoSatuanSoilTempSoil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textTempSoil"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginLeft="9dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_toEndOf="@+id/textDataTempSoil"
+                            android:text="°C"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/CardNutrisi"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_white"
+                    android:padding="8dp"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:id="@+id/judulNutrisi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Level Nutrisi" />
+
+                    <ImageView
+                        android:id="@+id/iconScales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/judulNutrisi"
+                        android:layout_marginTop="13dp"
+                        android:src="@drawable/icon_scales"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textScales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/judulNutrisi"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_toEndOf="@+id/iconScales"
+                        android:text="Terakhir 5 gram" />
+
+                    <ImageView
+                        android:id="@+id/iconInfoScales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iconScales"
+                        android:layout_marginTop="13dp"
+                        android:src="@drawable/icon_plant"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textInfoScales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textScales"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_toEndOf="@+id/iconScales"
+                        android:text="Pengisian dalam 2 hari" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Water Monitoring Section -->
+            <RelativeLayout
+                android:id="@+id/container_Detail_Air"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grey"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pemantauan Air"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/exclamation_circle" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/CardWaterPH"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white"
+                    android:padding="8dp"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iconWaterPH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/icon_water"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textWaterPH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iconWaterPH"
+                        android:layout_marginTop="9dp"
+                        android:text="Ph Air" />
+
+                    <TextView
+                        android:id="@+id/textDataWaterPH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textWaterPH"
+                        android:layout_marginTop="9dp"
+                        android:text="- pH"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/CardWaterLevel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_white"
+                    android:padding="8dp"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iconWaterLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/icon_water"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textWaterLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iconWaterLevel"
+                        android:layout_marginTop="9dp"
+                        android:text="Tingkat Kekeruhan" />
+
+                    <TextView
+                        android:id="@+id/textDataWaterLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textWaterLevel"
+                        android:layout_marginTop="9dp"
+                        android:text="- %"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- Watering Control Section -->
+            <RelativeLayout
+                android:id="@+id/container_Akuator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grey"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kontrol Penyiraman"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/exclamation_circle" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/bg_white"
+                android:orientation="vertical"
+                tools:ignore="Orientation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageWatering"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/btn_akuator" />
+
+                        <TextView
+                            android:id="@+id/textWatering"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Penyiraman Air" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageFertilizer"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/btn_akuator" />
+
+                        <TextView
+                            android:id="@+id/textFertilizer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Pupuk" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/green_500"
+                    android:text="Pengaturan"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
